@@ -35,7 +35,9 @@ class Counter extends Component<CounterProps, CounterState> {
         return true
     }
 
-    handleClick = () => {
+    // handleClick = (e: React.SyntheticEvent) => {
+    handleClick = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
+        console.log(`${e.clientX}, ${e.clientY}`)
         this.setState(({ count }) => ({
             count: ++count
         }))
@@ -48,6 +50,7 @@ class Counter extends Component<CounterProps, CounterState> {
             <div>
                 <h1>{this.props.title}{this.state.count}</h1>
                 <button onClick={this.handleClick}>+1</button>
+                <a href="#" onClick={this.handleClick}></a>
             </div>
         )
     }
