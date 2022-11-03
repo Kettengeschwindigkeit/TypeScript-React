@@ -1,30 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
 
-let test: string = 'test';
-// test = 42
-test = 'test2'
+// const Title: React.FC<{ title: string }> = ({ title, children }) => <h1>{title}</h1>
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React!!!!
-        </a>
-      </header>
-    </div>
-  );
+// const Title: React.FC<{ title: string }> = ({ title }) => <h1>{title}</h1>
+
+type TitleTypes = {
+  title: string,
+  test?: string
 }
+
+const Title = ({ title, test = "test" }: TitleTypes) => <h1>{title}{test}</h1>
+
+const App: React.FunctionComponent = () => <Title title="test" />
 
 export default App;
